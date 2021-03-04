@@ -18,7 +18,7 @@
 </form>
 
 
-<p id="result">To check results</p>
+<p id="result">check results</p>
 
 <script> 
 var correct = 0;
@@ -27,7 +27,6 @@ function processGuess(){
     console.log("Getting form values")
     secret = document.getElementById("form1_secret").value
     guess = document.getElementById("form1_guess").value
-    //confirmed = confirm("Are these the values? "+age+" and "+nick)
     
     out = document.getElementById("result")
     if(secret == guess){
