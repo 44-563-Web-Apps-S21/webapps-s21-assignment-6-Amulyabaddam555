@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        Arithmetic webpage
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+ 
+<body>
+
+<h2>Amulya Baddam computes</h2>
+
+<form>
+    <div class="form-group">
+    <label for="fnum">Enter a number</label>
+    <input type ="number" class="form-control" id="fnum" name="fnum" value=10> <br>
+
+    <label for="second_num">Enter a number</label>
+    <input type ="number" class="form-control" id="snum" name="snum" value=2> <br>
+    </div>
+    <input type="button" class="btn btn-primary" onclick="permutations()" value="Compute">
+</form>
+
+
+</br><p id="result">result displays here</p>
+
+<form>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="plus" name="annie" onclick="processRadio()" value="plus">
+    <label class="form-check-label" for="plus">+</label></br>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="minus" name="annie" onclick="processRadio()" value="minus">
+    <label class="form-check-label" for="minus">-</label></br>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="times" name="annie" onclick="processRadio()" value="times">
+    <label class="form-check-label" for="times">*</label></br>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="divide" name="annie" onclick="processRadio()" value="divide">
+    <label class="form-check-label" for="divide">/</label></br>
+    </div>
+    </form>
+
+  <p id="result2">result displays here</p>
+
+
+<script> 
+
+function permutations(){
+    fnum = document.getElementById("fnum").value
+    snum = document.getElementById("second_num").value
+    var product = 1;
+
+    let i=fnum;
+
+    do{
+        product *=i;
+        i--
+    }while(i>=(fnum-snum+1))
+
+
+    out = document.getElementById("result")
+    out.innerHTML = fnum+" permute "+snum+" is "+product
+}
+
+function processRadio() {
+    fnum = document.getElementById("fnum").value
+    snum = document.getElementById("snum").value
+
+    plus = document.getElementById("plus").checked
+    minus = document.getElementById("minus").checked
+    times = document.getElementById("times").checked
+    divide = document.getElementById("divide").checked
+
+        if (plus) {
+                out= document.getElementById("result2")
+                out.innerHTML = (Number)(fnum) + Number(snum)
+            }
+            if (minus) {
+                out= document.getElementById("result2")
+                out.innerHTML = fnum - snum
+            }
+            if (times) {
+                out=document.getElementById("result2")
+                out.innerHTML = fnum * snum
+            }
+            if (divide) {
+                out=document.getElementById("result2")
+                out.innerHTML = fnum / snum
+            }
+
+
+}
+</script>
+
+</body>
+</html> 
